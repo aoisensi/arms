@@ -13,6 +13,7 @@ var commands = map[int]func(*Interp) error{
 	int('c'): func(i *Interp) error { i.r = i.memory[i.s]; return nil },
 	int('.'): func(i *Interp) error { print(i.memory[i.s]); return nil },
 	int('+'): func(i *Interp) error { i.memory[i.s]++; return nil },
+	int('-'): func(i *Interp) error { i.memory[i.s]--; return nil },
 	int('%'): func(i *Interp) error { return errSuccess },
 }
 
