@@ -14,6 +14,8 @@ var commands = map[int]func(*Interp) error{
 	int('.'): func(i *Interp) error { print(i.memory[i.s]); return nil },
 	int('+'): func(i *Interp) error { i.memory[i.s]++; return nil },
 	int('-'): func(i *Interp) error { i.memory[i.s]--; return nil },
+	int('>'): func(i *Interp) error { i.s++; return nil },
+	int('<'): func(i *Interp) error { i.s--; return nil },
 	int('%'): func(i *Interp) error { return errSuccess },
 }
 
